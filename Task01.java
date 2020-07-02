@@ -8,7 +8,7 @@ public class Task01 {
         int cnt = 0;
         for (int i = 2; i <= 100000; i++) {
             boolean isPrime = true;
-
+//반복문 다시 짜봤는데도 안됨..
             for (int j = 2; i * i <= j && isPrime; j++) {
                 if (i % j == 0)
                     isPrime = false;
