@@ -5,17 +5,15 @@
 public class Task01 {
     public static void main(String[] args) {
 
-        int cnt = 0;
+        int cnt = 100000;
         for (int i = 2; i <= 100000; i++) {
             boolean isPrime = true;
 //반복문 다시 짜봤는데도 안됨..
-            for (int j = 2; i * i <= j && isPrime; j++) {
-                if (i % j == 0)
+            for (int j = 2; j * j <= i && isPrime; j++)
+                if (i % j == 0) {
                     isPrime = false;
-            }
-            if(isPrime) {
-                cnt++;
-            }
+                    cnt--;
+                }
         }
         System.out.println("소수의 개수 : " + cnt);
     }
