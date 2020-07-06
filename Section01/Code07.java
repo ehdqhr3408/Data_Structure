@@ -1,3 +1,5 @@
+package Section01;
+
 public class Code07 {
     public static void main(String[] args) {
 
