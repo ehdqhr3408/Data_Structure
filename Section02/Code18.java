@@ -1,3 +1,6 @@
+/*
+미리 쳐놓은 코드
+ */
 package Section02;
 
 import java.util.Scanner;
