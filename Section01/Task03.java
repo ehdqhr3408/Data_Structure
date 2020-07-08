@@ -4,5 +4,22 @@ package Section01;/*
 예를 들어 n=5이고 입력 정수들이 8, 1, 6, 9, 12라면 답은 26-10=16이다.
 */
 
+import java.util.Scanner;
+
 public class Task03 {
+    public static void main(String[] args){
+        Scanner kb = new Scanner(System.in);
+        int n = kb.nextInt();
+        int data [] = new int [n];
+        int sum = 0;
+        for(int i = 0; i<n;i++) {
+            data[i] = kb.nextInt();
+            if(data[i]%2==0)
+                sum+=data[i];
+            else
+                sum-=data[i];
+        }
+        kb.close();
+        System.out.println(sum);
+    }
 }
