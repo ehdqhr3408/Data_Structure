@@ -10,23 +10,21 @@ public class Task07 {
     public static void main(String[] args) {
         Scanner kb = new Scanner(System.in);
         int n = kb.nextInt();
-
-        int data[] = new int[n];
-        for (int i = 0; i < n; i++)
-            data[i] = kb.nextInt();
-        kb.close();
-
-        int a = 0, b = 0;
-        int min = Math.abs(data[0] - data[1]);
-        for (int j = 0; j < n; j++) {
-            for (int k = 0; k < n; k++) {
-                if (data[j] != data[k] && Math.abs(data[j] - data[k]) < min) {
-                    min = Math.abs(data[j] - data[k]);
-                    a = j;
-                    b = k;
-                }
+        int[] data = new int[n];
+        //배열과 정렬을 사용해서 해볼생각.
+        for (int i = 0; i < n; i++) {
+            int tmp = kb.nextInt();
+            int j = i - 1;
+            while (j >= 0 && data[j] > tmp) {
+                data[j + 1] = data[j];
+                j--;
             }
+            data[j + 1] = tmp;
+
+            for (int k = 0; k <= i; k++)
+                System.out.print(data[k] + " ");
+            System.out.println();
         }
-        System.out.println(a + " " + b);
+        kb.close();
     }
 }
