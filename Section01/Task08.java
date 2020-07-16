@@ -11,7 +11,7 @@ public class Task08 {
         Scanner kb = new Scanner(System.in);
         int n = kb.nextInt();
         int[] data = new int[n];
-        int [] fin = new int [n];
+
         //insert
         for (int i = 0; i < n; i++)
             data[i] = kb.nextInt();
@@ -27,16 +27,23 @@ public class Task08 {
                 }
             }
         }
-        //배열 출력, 중복값 제거(미완)
-        for(int i = 0;i<n;i++){
-            int temp = data[i];
-            if(temp==data[i+1])
-                continue;
-            else
-                fin[i]=data[temp];
+        //배열 출력, 중복값 제거(인터넷에서 가져옴)
+        for (int i = 0; i < n; i++) {
+            for (int j = i + 1; j < n; j++) {
+                if (data[i] == data[j]) {
+                    int shiftLeft = j;
+                    for (int k = j+1; k < n; k++, shiftLeft++) {
+                        data[shiftLeft] = data[k];
+                    }
+                    n--;
+                    j--;
+                }
+            }
         }
+
+
         for(int k = 0 ;k<n;k++){
-            System.out.print(fin[k] + " ");
+            System.out.print(data[k] + " ");
         }
 
     }
