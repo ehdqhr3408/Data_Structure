@@ -23,6 +23,7 @@ public class Code20 {
             inFile.close();
         } catch (FileNotFoundException e) {
             System.out.println("No data file exitsts.");
+            //return 을 해도 프로그램이 종료되나, 명시적으로 보이기 위해 exit사용하는 것 확실히 알기
             System.exit(1);
         }
 
@@ -35,7 +36,8 @@ public class Code20 {
     static void bubbleSort() {
         for (int i = n - 1; i > 0; i--) {
             for (int j = 0; j < i; j++) {
-                //compareTo 사용법 알아보기
+                // compareTo() 메소드는 A > B = 1 , A = B = 0 (A.equals(B)는 True, False 로 반환.), A < B = -1 반환함
+                // notion 등록 완료
                 if (name[j].compareTo(name[j + 1]) > 0) {
                     String tmp = name[j];
                     name[j] = name[j + 1];
