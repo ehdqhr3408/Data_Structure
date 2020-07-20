@@ -20,11 +20,18 @@ public class Task07 {
                 j--;
             }
             data[j + 1] = tmp;
-
-            for (int k = 0; k <= i; k++)
-                System.out.print(data[k] + " ");
-            System.out.println();
         }
         kb.close();
+        int ch = data[1] - data[0];
+        int min = data[0];
+        int max = data[0];
+        for (int i = 0; i < n - 1; i++) {
+            if (data[i + 1] - data[i] <= ch && data[i + 1] - data[i] != 0) {
+                ch = data[i + 1] - data[i];
+                min = data[i];
+                max = data[i + 1];
+            }
+        }
+        System.out.print(min + ", " + max);
     }
 }
